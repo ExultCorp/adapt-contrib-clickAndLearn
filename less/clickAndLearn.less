@@ -1,0 +1,178 @@
+.clickAndLearn-component {
+
+  .clickAndLearn-inner {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  .clickAndLearn-widget {
+    width: 100%;
+  }
+
+  .clickAndLearn-navContainer {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    position: relative;
+    padding-left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .clickAndLearn-indicator {
+    display: block;
+    cursor: pointer;
+    z-index: 15;
+    background-color: @primary-color;
+    list-style: none;
+    position: relative;
+    padding-left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .clickAndLearn-indicator:hover {
+    background-color: @secondary-color;
+  }
+
+  .clickAndLearn-indicatorActive {
+    background-color: @secondary-color;
+  }
+
+  .clickAndLearn-widget.clickAndLearn-horizontal {
+    float: left;
+  }
+
+  .clickAndLearn-horizontal > .clickAndLearn-navContainer {
+    position: relative;
+  }
+
+  .clickAndLearn-horizontal > .clickAndLearn-navContainer > li {
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 0px;
+    float: none;
+  }
+
+  .clickAndLearn-horizontal > .clickAndLearn-tabViewContainer {
+    width: 100%;
+    height: 120px;
+  }
+
+  .clickAndLearn-widget.clickAndLearn-vertical {
+    float: none;
+  }
+
+  .clickAndLearn-vertical > .clickAndLearn-navContainer {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .clickAndLearn-vertical > .clickAndLearn-navContainer > li {
+    margin-bottom: 3px;
+    margin-left: 0px;
+    float: none;
+  }
+
+  .clickAndLearn-vertical > .clickAndLearn-tabViewContainer {
+    width: auto;
+    height: auto;
+    margin-left: 165px;
+  }
+
+  .clickAndLearn-tabViewContainer {
+    width: 100%;
+    height: 120px;
+  }
+
+  .clickAndLearn-tabItem {
+    width: auto;
+    display: none;
+    position: relative;
+    background-color: @primary-color;
+    margin-top: 15px;
+    padding: @item-padding;
+    color: #FFFFFF;
+  }
+
+  .clickAndLearn-tabItem:after {
+    margin-left: @item-spacing;
+  }
+
+  .clickAndLearn-tabView-title {
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+  }
+
+  .clickAndLearn-tabView-content {
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: @font-size;
+  }
+
+  .clickAndLearn-popup {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    background-color: @inverted-background-color;
+    color: @inverted-foreground-color;
+    border: @border;
+  }
+
+  .clickAndLearn-popup-inner {
+    padding: @item-padding;
+  }
+
+  .clickAndLearn-popup-toolbar-title {
+    width: 80%;
+    margin-bottom: 10px;
+    float: left;
+  }
+
+  .clickAndLearn-popup-content {
+    overflow-y: auto;
+  }
+
+  .clickAndLearn-popup-open {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    text-decoration: none;
+    z-index: 500;
+    .icon {
+      color: @inverted-foreground-color;
+      &:hover {
+        color: lighten(@inverted-background-color, 30%);
+      }
+    }
+  }
+
+  .clickAndLearn-popup-close {
+    display: inline-block;
+    float: right;
+    color: @primary-color;
+    .icon {
+      color: @inverted-foreground-color;
+      &:hover {
+        color: lighten(@inverted-background-color, 30%);
+      }
+    }
+  }
+
+}
+
+.clickAndLearn-hidden {
+  display: none;
+  visibility: hidden;
+}
