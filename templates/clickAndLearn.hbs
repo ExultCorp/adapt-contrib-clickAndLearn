@@ -1,61 +1,46 @@
-{{! Maintainers - Himanshu Rajotia <himanshu.rajotia@credipoint.com>, CrediPoint Solutions <git@credipoint.com>}}
-<div class='clickAndLearn-inner component-inner'>
-    {{#if title}}
-        <div class='clickAndLearn-title component-title'>
-            <h4 class='clickAndLearn-title-inner component-title-inner'>
-                {{{title}}}
-            </h4>
-        </div>
-    {{/if}}
-    {{#if body}}
-        <div class='clickAndLearn-body component-body'>
-            <div class='clickAndLearn-body-inner component-body-inner'>
-                {{{body}}}
-            </div>
-        </div>
-    {{/if}}
-    <div class='clickAndLearn-widget component-widget {{#if _flag}}clickAndLearn-{{_flag}}{{/if}}'>
-        <ul class='clickAndLearn-navContainer'>
-            {{#each items}}
-                <li class='clickAndLearn-indicator'>
-                    {{#if imageSrc}}
-                        <img src='{{imageSrc}}'
-                             class='clickAndLearn-indicator-img'>
-                    {{/if}}
-                </li>
+{{! Maintainers - Himanshu Rajotia <himanshu.rajotia@exultcorp.com>}}
+<div class="clickAndLearn-inner component-inner">
+    {{> component this}}
+    <div class="clickAndLearn-widget component-widget {{#if _flag}}clickAndLearn-{{_flag}}{{/if}}">
+        <ul class="clickAndLearn-navContainer">
+            {{#each _items}}
+            <li class="clickAndLearn-indicator">
+                {{#if imageSrc}}
+                <img src="{{imageSrc}}" class="clickAndLearn-indicator-img">
+                {{/if}}
+            </li>
             {{/each}}
         </ul>
-        <div class='clickAndLearn-tabViewContainer'>
-            {{#each items}}
-                <div class='clickAndLearn-tabItem'>
-                    <div class='clickAndLearn-tabView-title'>{{title}}</div>
-                    <div class='clickAndLearn-tabView-content'>{{content
-                    }}</div>
-                </div>
+        <div class="clickAndLearn-tabViewContainer">
+            {{#each _items}}
+            <div class="clickAndLearn-tabItem">
+                <div class="clickAndLearn-tabView-title">{{{title}}}</div>
+                <div class="clickAndLearn-tabView-body">{{{body}}}</div>
+            </div>
             {{/each}}
         </div>
-        <div class='clickAndLearn-popup clickAndLearn-hidden'>
-            <div class='clickAndLearn-popup-inner'>
-                <div class='clickAndLearn-popup-toolbar'>
-                    <div class='clickAndLearn-popup-toolbar-inner clearfix'>
-                        {{#each items}}
-                            <div class='clickAndLearn-popup-toolbar-title'>
-                                <h5 class='clickAndLearn-popup-toolbar-inner'>
-                                    {{{title}}}
-                                </h5>
-                            </div>
+        <div class="clickAndLearn-popup display-none">
+            <div class="clickAndLearn-popup-inner">
+                <div class="clickAndLearn-popup-toolbar">
+                    <div class="clickAndLearn-popup-toolbar-inner clearfix">
+                        {{#each _items}}
+                        <div class="clickAndLearn-popup-toolbar-title">
+                            <h5 class="clickAndLearn-popup-toolbar-inner">
+                                {{{title}}}
+                            </h5>
+                        </div>
                         {{/each}}
-                        <a href='#' class='clickAndLearn-popup-close'>
-                            <div class='icon icon-cross'></div>
+                        <a href="#" class="clickAndLearn-popup-close">
+                            <div class="icon icon-cross"></div>
                         </a>
                     </div>
                 </div>
-                {{#each items}}
-                    <div class='clickAndLearn-popup-content'>
-                        <div class='clickAndLearn-popup-content-inner'>
-                            {{{content}}}
-                        </div>
+                {{#each _items}}
+                <div class="clickAndLearn-popup-body">
+                    <div class="clickAndLearn-popup-body-inner">
+                        {{{body}}}
                     </div>
+                </div>
                 {{/each}}
             </div>
         </div>

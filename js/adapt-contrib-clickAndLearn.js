@@ -1,9 +1,8 @@
 /*
  * adapt-contrib-clickAndLearn
- * License - https://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
- * Maintainers - Himanshu Rajotia <himanshu.rajotia@credipoint.com>, CrediPoint Solutions <git@credipoint.com>
+ * License - https://github.com/ExultCorp/adapt-contrib-clickAndLearn/blob/master/LICENSE
+ * Maintainers - Himanshu Rajotia <himanshu.rajotia@exultcorp.com>
  */
-
 define(function(require) {
   var ComponentView = require('coreViews/componentView');
   var Adapt = require('coreJS/adapt');
@@ -12,7 +11,6 @@ define(function(require) {
 
     events: {
       'click .clickAndLearn-indicator': 'onClickDisplayItem',
-      'click .clickAndLearn-indicator-img': 'onClickDisplayItem',
       'click .clickAndLearn-popup-close': 'onClickCloseItem'
     },
 
@@ -44,24 +42,25 @@ define(function(require) {
 
     // this is use to set ready status for current component on postRender.
     postRender: function() {
-      ComponentView.prototype.postRender.apply(this);
       this.setDeviceSize();
       var flag = this.model.get('_flag');
       if (flag == "horizontal") {
         this.$('.clickAndLearn-container').addClass('clickAndLearn-horizontal');
-      }
-      else if (flag == "vertical") {
+      } else if (flag == "vertical") {
         this.$('.clickAndLearn-container').addClass('clickAndLearn-vertical');
       }
       this.$('.clickAndLearn-tabViewContainer').show();
-      this.setReadyStatus();
+
+      this.$('.clickAndLearn-widget').imageready(_.bind(function() {
+          this.setReadyStatus();
+      }, this));
     },
 
     // handler function for click event on indicator element.
     onClickDisplayItem: function(event) {
-      if (event) event.preventDefault();
-      var $selectedElement = $(event.target);
-      var idNumber = this.$('.clickAndLearn-indicator').index($selectedElement.closest('.clickAndLearn-indicator'));
+      if (event && event.preventDefault) event.preventDefault();
+      var $selectedElement = $(event.currentTarget);
+      var indicatorIndex = this.$('.clickAndLearn-indicator').index($selectedElement);
 
       this.setDeviceSize();
       var tabViewContainer = this.$('.clickAndLearn-tabViewContainer');
@@ -78,38 +77,38 @@ define(function(require) {
         $selectedElement.addClass('clickAndLearn-indicatorActive');
       }
       this.$('.clickAndLearn-tabViewContainer .clickAndLearn-tabItem').hide();
-      this.$('.clickAndLearn-tabViewContainer .clickAndLearn-tabItem:eq(' + idNumber + ')').show();
+      this.$('.clickAndLearn-tabViewContainer .clickAndLearn-tabItem:eq(' + indicatorIndex + ')').show();
 
       if (!this.model.get('_isDesktop')) {
         var popup = this.$('.clickAndLearn-popup');
-        popup.removeClass('clickAndLearn-hidden');
+        popup.removeClass('display-none');
 
         popup.find('.clickAndLearn-popup-toolbar-title').hide();
-        popup.find('.clickAndLearn-popup-content').hide();
+        popup.find('.clickAndLearn-popup-body').hide();
 
-        popup.find('.clickAndLearn-popup-toolbar-title:eq(' + idNumber + ')').show();
-        popup.find('.clickAndLearn-popup-content:eq(' + idNumber + ')').show();
+        popup.find('.clickAndLearn-popup-toolbar-title:eq(' + indicatorIndex + ')').show();
+        popup.find('.clickAndLearn-popup-body:eq(' + indicatorIndex + ')').show();
       }
-      this.setVisited(idNumber);
+      this.setVisited(indicatorIndex);
     },
 
     // Click or Touch event handler for pop-close.
     onClickCloseItem: function(event) {
-      if (event) event.preventDefault();
+      if (event && event.preventDefault) event.preventDefault();
       this.$('.clickAndLearn-popup-close').blur();
-      this.$('.clickAndLearn-popup').addClass('clickAndLearn-hidden');
+      this.$('.clickAndLearn-popup').addClass('display-none');
     },
 
     // This function will set the visited status for particular flipCard item.
     setVisited: function(index) {
-      var item = this.model.get('items')[index];
+      var item = this.model.get('_items')[index];
       item._isVisited = true;
       this.checkCompletionStatus();
     },
 
     // This function will be used to get visited states of all flipCard items.
     getVisitedItems: function() {
-      return _.filter(this.model.get('items'), function(item) {
+      return _.filter(this.model.get('_items'), function(item) {
         return item._isVisited;
       });
     },
@@ -117,7 +116,7 @@ define(function(require) {
     // This function will check or set the completion status of current component.
     checkCompletionStatus: function() {
       if (!this.model.get('_isComplete')) {
-        if (this.getVisitedItems().length === this.model.get('items').length) {
+        if (this.getVisitedItems().length === this.model.get('_items').length) {
           this.setCompletionStatus();
         }
       }
@@ -126,6 +125,7 @@ define(function(require) {
   });
 
   Adapt.register('clickAndLearn', ClickAndLearn);
+
   return ClickAndLearn;
 
 });

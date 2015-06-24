@@ -1,23 +1,23 @@
 {
   "name": "adapt-contrib-clickAndLearn",
-  "version": "0.0.1",
-  "description": "Click And Learn Template developed by CrediPoint Solutions for Adapt Framework v1.0.0.",
+  "version": "1.0.0",
+  "description": "Click And Learn Template developed by Exult Corporation for Adapt Framework v1.1.x.",
   "main": "",
   "scripts": {
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/CrediPointSolutions/adapt-contrib-clickAndLearn.git"
+    "url": "git://github.com/ExultCorp/adapt-contrib-clickAndLearn.git"
   },
-  "author": "CrediPointSolutions",
+  "author": "Exult Corporation",
   "license": "GPL v3",
   "bugs": {
-    "url": "https://github.com/CrediPointSolutions/adapt-contrib-clickAndLearn/issues"
+    "url": "https://github.com/ExultCorp/adapt-contrib-clickAndLearn/issues"
   },
   "devDependencies": {
-    "karma": "~0.10",
-    "karma-mocha": "*",
-    "karma-expect": "*"
+    "karma": "0.10",
+    "karma-mocha": "0.1.0",
+    "karma-expect": "1.1.0"
   }
 }

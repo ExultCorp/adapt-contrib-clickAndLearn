@@ -1,5 +1,4 @@
-[
-  {
+{
     "_id": "c-10",
     "_parentId": "b-10",
     "_type": "component",
@@ -8,21 +7,24 @@
     "_layout": "full",
     "title": "Click And Learn",
     "body": "This is optional body text. Click the image below to reveal the text.",
-    "items": [
-      {
-        "title": "What is a component?",
-        "content": "In Adapt we have a concept of components. These components are the main interactive elements found on a page. (Multiple Choice Question, Media, Text and Narrative are all types of components). These components can be split into two categories.",
-        "imageSrc": "course/en/images/click_1.png"
-      },
-      {
-        "title": "Presentational components",
-        "content": "A presentational component should be used to display content with little interactivity. A few components that full under this category are: Graphic, Media, Hot Graphic and Narrative.",
-        "imageSrc": "course/en/images/click_2.png"
-      }
+    "displayTitle": "ClickAndLearn",
+    "instruction": "",
+    "_items": [
+        {
+            "title": "What is a component?",
+            "body": "In Adapt we have a concept of components. These components are the main interactive elements found on a page. (Multiple Choice Question, Media, Text and Narrative are all types of components). These components can be split into two categories.",
+            "imageSrc": "course/en/images/click_1.png"
+        },
+        {
+            "title": "Presentational components",
+            "body": "A presentational component should be used to display content with little interactivity. A few components that full under this category are: Graphic, Media, Hot Graphic and Narrative.",
+            "imageSrc": "course/en/images/click_2.png"
+        }
     ],
     "_flag": "horizontal"
-  },
-  {
+}
+
+{
     "_id": "c-20",
     "_parentId": "b-20",
     "_type": "component",
@@ -31,20 +33,22 @@
     "_layout": "full",
     "title": "Click And Learn",
     "body": "This is optional body text. Click the image below to reveal the text.",
-    "items": [
-      {
-        "title": "What is a component?",
-        "content": "In Adapt we have a concept of components. These components are the main interactive elements found on a page. (Multiple Choice Question, Media, Text and Narrative are all types of components). These components can be split into two categories.",
-        "imageSrc": "course/en/images/click_1.png"
-      },
-      {
-        "title": "Presentational components",
-        "content": "A presentational component should be used to display content with little interactivity. A few components that full under this category are: Graphic, Media, Hot Graphic and Narrative.",
-        "imageSrc": "course/en/images/click_2.png"
-      }
+    "displayTitle": "ClickAndLearn",
+    "instruction": "",
+    "_items": [
+        {
+            "title": "What is a component?",
+            "body": "In Adapt we have a concept of components. These components are the main interactive elements found on a page. (Multiple Choice Question, Media, Text and Narrative are all types of components). These components can be split into two categories.",
+            "imageSrc": "course/en/images/click_1.png"
+        },
+        {
+            "title": "Presentational components",
+            "body": "A presentational component should be used to display content with little interactivity. A few components that full under this category are: Graphic, Media, Hot Graphic and Narrative.",
+            "imageSrc": "course/en/images/click_2.png"
+        }
     ],
     "_flag": "vertical"
-  }
-]
+}
+
 
 //_flag accepts 'horizontal' and 'vertical'

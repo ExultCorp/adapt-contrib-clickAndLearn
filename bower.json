@@ -1,14 +1,18 @@
 {
   "name": "adapt-contrib-clickAndLearn",
-  "version": "0.0.1",
-  "repository": "git://github.com/CrediPointSolutions/adapt-contrib-clickAndLearn.git",
-  "homepage": "https://github.com/CrediPointSolutions/adapt-contrib-clickAndLearn",
+  "version": "1.0.0",
+  "repository": "git://github.com/ExultCorp/adapt-contrib-clickAndLearn.git",
+  "homepage": "https://github.com/ExultCorp/adapt-contrib-clickAndLearn",
   "authors": [
-    "Himanshu Rajotia <himanshu.rajotia@credipoint.com>",
-    "CrediPoint Solutions <git@credipoint.com>"
+    "Himanshu Rajotia <himanshu.rajotia@exultcorp.com>"
   ],
-  "description": "Click and Learn Template developed by CrediPoint Solutions for Adapt Framework v1.0.0.",
+  "description": "Click and Learn Template developed by Exult Corporation for Adapt Framework v1.1.x.",
   "main": "/js/adapt-contrib-clickAndLearn.js",
+  "displayName" : "ClickAndLearn",
+  "component" : "clickAndLearn",
+  "assetFields" : [
+    "_items[].imageSrc"
+  ],
   "keywords": [
     "adapt-plugin",
     "adapt-component"

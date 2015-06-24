@@ -1,0 +1,71 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "properties":{
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "inputType": "Text",
+      "default": "",
+      "validators": [],
+      "help": "This is the instruction text"
+    },
+    "_flag": {
+      "type": "string",
+      "required": true,
+      "enum": ["horizontal", "vertical"],
+      "inputType": {"type": "Select", "options": ["horizontal", "vertical"]},
+      "title": "Set click view type",
+      "default": "horizontal",
+      "validators": ["required"],
+      "help": "'horizontal' or 'vertical'"
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Items",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "imageSrc": {
+            "type": "string",
+            "required": true,
+            "inputType": "Asset:image",
+            "title": "Item Graphic",
+            "default": "",
+            "validators": ["required"],
+            "help": "Image source"
+          },
+          "title": {
+            "type": "string",
+            "required": false,
+            "inputType": "Text",
+            "title": "Item Heading",
+            "default": "",
+            "validators": [],
+            "help": "Enter a title text"
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "inputType": "TextArea",
+            "title": "Item Body",
+            "default": "",
+            "validators": [],
+            "help": "Enter body text"
+          }
+        }
+      }
+    }
+  }
+}
