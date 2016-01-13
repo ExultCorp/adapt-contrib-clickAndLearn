@@ -68,7 +68,7 @@
                 "help": "Image which will be rendered as clickable card"
               }
             }
-          }
+          },
           "title": {
             "type": "string",
             "required": false,
