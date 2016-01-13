@@ -3,6 +3,15 @@
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "This component is a click and learn type of component where we have few clickable cards, after clicking on one of those card they reveal text associated with them.",
+      "inputType": "Text",
+      "validators": []
+    }
+  },
   "properties":{
     "_supportedLayout": {
       "type": "string",
@@ -14,8 +23,8 @@
     "instruction": {
       "type": "string",
       "required": false,
-      "inputType": "Text",
       "default": "",
+      "inputType": "Text",
       "validators": [],
       "help": "This is the instruction text"
     },
@@ -37,15 +46,29 @@
         "type": "object",
         "required": true,
         "properties": {
-          "imageSrc": {
-            "type": "string",
-            "required": true,
-            "inputType": "Asset:image",
-            "title": "Item Graphic",
-            "default": "",
-            "validators": ["required"],
-            "help": "Image source"
-          },
+          "_graphic": {
+            "type": "object",
+            "required": false,
+            "title": "Graphic",
+            "properties":{
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "The alternative text for this image"
+              },
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Asset:image",
+                "validators": [],
+                "help": "Image which will be rendered as clickable card"
+              }
+            }
+          }
           "title": {
             "type": "string",
             "required": false,

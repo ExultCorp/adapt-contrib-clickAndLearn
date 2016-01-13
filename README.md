@@ -1,6 +1,6 @@
 #adapt-contrib-clickAndLearn
 
-Click And Learn Component/Plug-in developed by Exult Corporation for Adapt Framework v1.1.x.
+Click And Learn Component/Plug-in developed by Exult Corporation for Adapt Framework v2.x.x.
 
 A basic click and learn Component/Plug-in that generates clickable cards with an images at top and text at bottom.
 
@@ -33,12 +33,18 @@ Horizontal Example: All Click And Learn tabs items display horizontally.
 	        {
 	            "title": "What is a component?",
 	            "body": "In Adapt we have a concept of components. These components are the main interactive elements found on a page. (Multiple Choice Question, Media, Text and Narrative are all types of components). These components can be split into two categories.",
-	            "imageSrc": "course/en/images/click_1.png"
+	            "_graphic": {
+	                "src": "course/en/images/click_1.png",
+	                "alt": "info about first card."
+	            }
 	        },
 	        {
 	            "title": "Presentational components",
 	            "body": "A presentational component should be used to display content with little interactivity. A few components that full under this category are: Graphic, Media, Hot Graphic and Narrative.",
-	            "imageSrc": "course/en/images/click_2.png"
+	            "_graphic": {
+	                "src": "course/en/images/click_2.png",
+	                "alt": "info about second card."
+	            }
 	        }
 	    ],
 	    "_flag": "horizontal"
@@ -61,12 +67,18 @@ Vertical Example: All Click And Learn tabs items display vertically.
 	        {
 	            "title": "What is a component?",
 	            "body": "In Adapt we have a concept of components. These components are the main interactive elements found on a page. (Multiple Choice Question, Media, Text and Narrative are all types of components). These components can be split into two categories.",
-	            "imageSrc": "course/en/images/click_1.png"
+	            "_graphic": {
+	                "src": "course/en/images/click_1.png",
+	                "alt": "info about first card."
+	            }
 	        },
 	        {
 	            "title": "Presentational components",
 	            "body": "A presentational component should be used to display content with little interactivity. A few components that full under this category are: Graphic, Media, Hot Graphic and Narrative.",
-	            "imageSrc": "course/en/images/click_2.png"
+	            "_graphic": {
+	                "src": "course/en/images/click_2.png",
+	                "alt": "info about second card."
+	            }
 	        }
 	    ],
 	    "_flag": "vertical"

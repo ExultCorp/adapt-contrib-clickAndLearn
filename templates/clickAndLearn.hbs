@@ -1,13 +1,11 @@
 {{! Maintainers - Himanshu Rajotia <himanshu.rajotia@exultcorp.com>}}
-<div class="clickAndLearn-inner component-inner">
+<div class="clickAndLearn-inner component-inner" role="region" aria-label="{{_globals._components._clickAndLearn.ariaRegion}}">
     {{> component this}}
     <div class="clickAndLearn-widget component-widget {{#if _flag}}clickAndLearn-{{_flag}}{{/if}}">
         <ul class="clickAndLearn-navContainer">
             {{#each _items}}
             <li class="clickAndLearn-indicator">
-                {{#if imageSrc}}
-                <img src="{{imageSrc}}" class="clickAndLearn-indicator-img">
-                {{/if}}
+                <img src="{{_graphic.src}}" class="clickAndLearn-indicator-img" aria-label="{{_graphic.alt}}" tabindex="0">
             </li>
             {{/each}}
         </ul>
